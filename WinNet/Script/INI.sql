@@ -1,0 +1,63 @@
+/*SCRIPT PARA INICIAR SISTEMA */
+INSERT INTO SGUSUARIOS(SgUserName,SgUserEmail,SgUserPasswd,SgNombre,SgApellidos,SgUserAlta,CreaUserID)
+           VALUES('admin','admin@midominio.com','YQBkAG0AaQBuADEAMgAzAA==','Administrador','N/A',GETDATE(),1)
+
+INSERT INTO SGPLATAFORMA(PlataformaNombre)
+VALUES ('WINDOWS')
+INSERT INTO SGPLATAFORMA(PlataformaNombre)
+VALUES ('WEB')
+INSERT INTO SGPLATAFORMA(PlataformaNombre)
+VALUES ('MOVIL')
+
+INSERT INTO SGESTRUCTURAMENU(EstructuraMenuDescripcion)
+	VALUES('ERP')
+
+INSERT INTO SGMODULOS(ModuloNombre, ModuloActivo)
+ VALUES('SYS',1)
+INSERT INTO SGMODULOS(ModuloNombre, ModuloActivo)
+ VALUES('SEGURIDADES',1)
+
+INSERT INTO SGFUNCIONES(SGFuncionNombre, SGFuncionDescripcion, SGFuncionConsultar, SGFuncionNuevo, SGFuncionEliminar, SGFuncionRecuperar, SGFuncionModificar, SGFuncionListar, SGFuncionExportar, SGFuncionGraficar, SGFuncionActivo, SGFuncionOLEDLL, SGFuncionWeb, SGFuncionPrimaria)
+	VALUES('SGESTRUCTURAMENU','Estructuras',1,1,1,1,1,1,1,1,1,'SegLibrary.SegData','WEB',1)
+INSERT INTO SGFUNCIONES(SGFuncionNombre, SGFuncionDescripcion, SGFuncionConsultar, SGFuncionNuevo, SGFuncionEliminar, SGFuncionRecuperar, SGFuncionModificar, SGFuncionListar, SGFuncionExportar, SGFuncionGraficar, SGFuncionActivo, SGFuncionOLEDLL, SGFuncionWeb, SGFuncionPrimaria)
+	VALUES('SGMODULOS','Modulos',1,1,1,1,1,1,1,1,1,'SegLibrary.SegData','WEB',1)
+INSERT INTO SGFUNCIONES(SGFuncionNombre, SGFuncionDescripcion, SGFuncionConsultar, SGFuncionNuevo, SGFuncionEliminar, SGFuncionRecuperar, SGFuncionModificar, SGFuncionListar, SGFuncionExportar, SGFuncionGraficar, SGFuncionActivo, SGFuncionOLEDLL, SGFuncionWeb, SGFuncionPrimaria)
+	VALUES('SGFUNCIONES','Funciones',1,1,1,1,1,1,1,1,1,'SegLibrary.SegData','WEB',1)
+INSERT INTO SGFUNCIONES(SGFuncionNombre, SGFuncionDescripcion, SGFuncionConsultar, SGFuncionNuevo, SGFuncionEliminar, SGFuncionRecuperar, SGFuncionModificar, SGFuncionListar, SGFuncionExportar, SGFuncionGraficar, SGFuncionActivo, SGFuncionOLEDLL, SGFuncionWeb, SGFuncionPrimaria)
+	VALUES('SGPERFILES','Perfiles',1,1,1,1,1,1,1,1,1,'SegLibrary.SegData','WEB',1)
+INSERT INTO SGFUNCIONES(SGFuncionNombre, SGFuncionDescripcion, SGFuncionConsultar, SGFuncionNuevo, SGFuncionEliminar, SGFuncionRecuperar, SGFuncionModificar, SGFuncionListar, SGFuncionExportar, SGFuncionGraficar, SGFuncionActivo, SGFuncionOLEDLL, SGFuncionWeb, SGFuncionPrimaria)
+	VALUES('SGUSUARIOS','Usuarios',1,1,1,1,1,1,1,1,1,'SegLibrary.SegData','WEB',1)
+
+INSERT INTO SGESTRUCTURASM_DETALLE(EstructuraMenuID, ModuloID, ModuloPadreID)
+	VALUES(1,1,1)
+INSERT INTO SGESTRUCTURASM_DETALLE(EstructuraMenuID, ModuloID, ModuloPadreID)
+	VALUES(1,2,1)
+
+INSERT INTO SGFUNCIONESMODULO(EstructuraMenuID, ModuloID, SGFuncionID)
+	VALUES(1,2,1)
+INSERT INTO SGFUNCIONESMODULO(EstructuraMenuID, ModuloID, SGFuncionID)
+	VALUES(1,2,2)
+INSERT INTO SGFUNCIONESMODULO(EstructuraMenuID, ModuloID, SGFuncionID)
+	VALUES(1,2,3)
+INSERT INTO SGFUNCIONESMODULO(EstructuraMenuID, ModuloID, SGFuncionID)
+	VALUES(1,2,4)
+INSERT INTO SGFUNCIONESMODULO(EstructuraMenuID, ModuloID, SGFuncionID)
+	VALUES(1,2,5)
+
+INSERT INTO SGPERFILES(PerfilNombre, EstructuraMenuID, PlataformaID, CreaUserID)
+VALUES('SA',1,1,1)
+
+INSERT INTO SGUSRPERFIL(SgUserID, PerfilID, CreaUserID)
+	VALUES(1,1,1)
+
+INSERT INTO SGPERFILESDETALLE(PerfilID, ModuloID, SGFuncionID, PerfilConsultar, PerfilNuevo, PerfilEliminar, PerfilRecuperar, PerfilModificar, PerfilListar, PerfilExportar, PerfilGraficar, CreaUserID, CreaDate)
+    VALUES(1,2,1,1,1,1,1,1,1,1,1,1,GETDATE())
+INSERT INTO SGPERFILESDETALLE(PerfilID, ModuloID, SGFuncionID, PerfilConsultar, PerfilNuevo, PerfilEliminar, PerfilRecuperar, PerfilModificar, PerfilListar, PerfilExportar, PerfilGraficar, CreaUserID, CreaDate)
+    VALUES(1,2,2,1,1,1,1,1,1,1,1,1,GETDATE())
+INSERT INTO SGPERFILESDETALLE(PerfilID, ModuloID, SGFuncionID, PerfilConsultar, PerfilNuevo, PerfilEliminar, PerfilRecuperar, PerfilModificar, PerfilListar, PerfilExportar, PerfilGraficar, CreaUserID, CreaDate)
+    VALUES(1,2,3,1,1,1,1,1,1,1,1,1,GETDATE())
+INSERT INTO SGPERFILESDETALLE(PerfilID, ModuloID, SGFuncionID, PerfilConsultar, PerfilNuevo, PerfilEliminar, PerfilRecuperar, PerfilModificar, PerfilListar, PerfilExportar, PerfilGraficar, CreaUserID, CreaDate)
+    VALUES(1,2,4,1,1,1,1,1,1,1,1,1,GETDATE())
+INSERT INTO SGPERFILESDETALLE(PerfilID, ModuloID, SGFuncionID, PerfilConsultar, PerfilNuevo, PerfilEliminar, PerfilRecuperar, PerfilModificar, PerfilListar, PerfilExportar, PerfilGraficar, CreaUserID, CreaDate)
+    VALUES(1,2,5,1,1,1,1,1,1,1,1,1,GETDATE())
+
